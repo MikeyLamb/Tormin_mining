@@ -6,3 +6,6 @@ leafmap
 nbserverproxy
 owslib
 streamlit
+localtileserver
+rasterio
+xarray

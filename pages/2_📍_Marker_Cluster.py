@@ -1,0 +1,37 @@
+import streamlit as st
+import leafmap.foliumap as leafmap
+
+st.set_page_config(layout="wide")
+
+markdown = """
+Web App URL: <https://geotemplate.streamlit.app>
+GitHub Repository: <https://github.com/giswqs/streamlit-multipage-template>
+"""
+
+st.sidebar.title("About")
+st.sidebar.info(markdown)
+logo = "https://i.imgur.com/UbOXYAU.png"
+st.sidebar.image(logo)
+
+st.title("Cliff slumps")
+
+
+center_coords = (18.099903, -31.555141)
+default_zoom = 14
+m = leafmap.Map(center=center_coords, zoom=default_zoom)
+m.add_basemap("SATELLITE")
+
+
+collapses = 'vector\cliff_collapses.csv'
+regions = 'vector\collapse_areas.geojson'
+
+m.add_geojson(regions, layer_name='Collapse areas')
+m.add_points_from_xy(
+    collapses,
+    x="longitude",
+    y="latitude",
+    spin=True,
+    add_legend=True,
+)
+        
+m.to_streamlit(height=700)

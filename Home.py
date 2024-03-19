@@ -5,36 +5,37 @@ st.set_page_config(layout="wide")
 
 # Customize the sidebar
 markdown = """
-Web App URL: <https://geotemplate.streamlit.app>
-GitHub Repository: <https://github.com/giswqs/streamlit-multipage-template>
+Built using Streamlit and Leafmap
+
+By: Michael Lambrecht, One Ocean Hub & University of Cape Town
 """
 
 st.sidebar.title("About")
 st.sidebar.info(markdown)
-logo = "https://i.imgur.com/UbOXYAU.png"
+logo = "https://protectthewestcoast.org/wp-content/uploads/2023/06/PTWC_logo.svg"
 st.sidebar.image(logo)
 
+markdown_2 = """
+Wu, Q. (2021). Leafmap: A Python package for interactive mapping and geospatial analysis with minimal coding in a Jupyter environment. Journal of Open Source Software, 6(63), 3414. https://doi.org/10.21105/joss.03414
+"""
+
+st.sidebar.title("Credits")
+st.sidebar.info(markdown_2)
+
 # Customize page title
-st.title("Streamlit for Geospatial Applications")
+st.title("Torming Mining")
 
 st.markdown(
     """
-    This multipage app template demonstrates various interactive web apps created using [streamlit](https://streamlit.io) and [leafmap](https://leafmap.org). It is an open-source project and you are very welcome to contribute to the [GitHub repository](https://github.com/giswqs/streamlit-multipage-template).
+    Welcome to this web app showing satellite imagery of mining at Tormin on the West Coast of South Africa
     """
 )
 
 st.header("Instructions")
 
 markdown = """
-1. For the [GitHub repository](https://github.com/giswqs/streamlit-multipage-template) or [use it as a template](https://github.com/giswqs/streamlit-multipage-template/generate) for your own project.
-2. Customize the sidebar by changing the sidebar text and logo in each Python files.
-3. Find your favorite emoji from https://emojipedia.org.
-4. Add a new app to the `pages/` directory with an emoji in the file name, e.g., `1_🚀_Chart.py`.
-
+1. Explore the different apps on the left hand side panel. 
+2. The left hand side panel can be collapsed and expanded as needed.
 """
 
 st.markdown(markdown)
-
-m = leafmap.Map(minimap_control=True)
-m.add_basemap("OpenTopoMap")
-m.to_streamlit(height=500)
