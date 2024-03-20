@@ -6,14 +6,20 @@ import leafmap.foliumap as leafmap
 # Set page configuration
 st.set_page_config(layout="wide")
 
+# Display the map title
+st.title("RSA Mining Map")
+
+st.markdown(
+    """
+    Welcome to this web app showing satellite imagery of mining at Tormin on the West Coast of South Africa
+    """
+)
+
 # Define the relative path to the vector folder
 vector_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), "../vector"))
 
 # Path to the GeoJSON file
 geojson_file = os.path.join(vector_folder, "rsa_mining_areas.geojson")
-
-# Display the map title
-st.title("RSA Mining Map")
 
 # Create a Leafmap map object
 m = leafmap.Map()

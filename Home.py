@@ -22,8 +22,9 @@ Wu, Q. (2021). Leafmap: A Python package for interactive mapping and geospatial 
 st.sidebar.title("Credits")
 st.sidebar.info(markdown_2)
 
+
 # Customize page title
-st.title("Torming Mining")
+st.title("Tormin Mining")
 
 st.markdown(
     """

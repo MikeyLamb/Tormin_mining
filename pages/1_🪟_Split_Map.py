@@ -1,7 +1,17 @@
 import os
 import streamlit as st
 import leafmap.foliumap as leafmap
+
+
 st.set_page_config(layout="wide")
+
+st.title("Split-panel Map")
+
+st.markdown(
+    """
+    Welcome to this web app showing satellite imagery of mining at Tormin on the West Coast of South Africa
+    """
+)
 
 # Define the relative path to the raster folder
 raster_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), "../raster"))
@@ -47,7 +57,7 @@ if st.sidebar.button("Zoom to Tormin Mine"):
 
 
 
-st.title("Split-panel Map")
+
 
 # Dynamic header to display the selected right layer
 left_header, right_header = st.columns(2)

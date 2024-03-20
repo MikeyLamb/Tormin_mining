@@ -15,6 +15,11 @@ st.sidebar.image(logo)
 
 st.title("Cliff slumps")
 
+st.markdown(
+    """
+    Welcome to this web app showing satellite imagery of mining at Tormin on the West Coast of South Africa
+    """
+)
 
 center_coords = (18.099903, -31.555141)
 default_zoom = 14
