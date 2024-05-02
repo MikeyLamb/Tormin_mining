@@ -6,7 +6,11 @@ import pandas as pd
 
 
 
-st.set_page_config(layout="wide")
+st.set_page_config(
+        page_title= 'Mining in South Africa',
+        page_icon=":world_map:",
+        layout = "wide",
+        initial_sidebar_state="expanded")
 
 st.title("Area of Land Cover Map")
 
@@ -78,8 +82,6 @@ if active_layer and active_layer.endswith('.tif'):
 # Add a button to zoom to Tormin Mine
 if st.sidebar.button("Zoom to Tormin Mine"):
     zoom_to_tormin_mine()
-
-
 
 
 # Display the map

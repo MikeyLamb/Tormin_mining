@@ -4,7 +4,11 @@ import streamlit as st
 import leafmap.foliumap as leafmap
 
 # Set page configuration
-st.set_page_config(layout="wide")
+st.set_page_config(
+        page_title= 'Mining in South Africa',
+        page_icon=":world_map:",
+        layout = "wide",
+        initial_sidebar_state="expanded")
 
 # Display the map title
 st.title("RSA Mining Map")

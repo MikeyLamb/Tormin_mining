@@ -1,7 +1,14 @@
 import streamlit as st
 import leafmap.foliumap as leafmap
 
-st.set_page_config(layout="wide")
+
+
+st.set_page_config(
+        page_title= 'Mining in South Africa',
+        page_icon=":world_map:",
+        layout = "wide",
+        initial_sidebar_state="expanded")
+
 
 # Customize the sidebar
 markdown = """

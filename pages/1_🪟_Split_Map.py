@@ -3,7 +3,11 @@ import streamlit as st
 import leafmap.foliumap as leafmap
 
 
-st.set_page_config(layout="wide")
+st.set_page_config(
+        page_title= 'Mining in South Africa',
+        page_icon=":world_map:",
+        layout = "wide",
+        initial_sidebar_state="expanded")
 
 st.title("Split-panel Map")
 
@@ -53,7 +57,8 @@ if st.sidebar.button("Zoom to Tormin Mine"):
         raster_path = os.path.join(raster_folder, right_layer)
         m.add_raster(raster_path)
     
-    m.split_map(left_layer=left_layer, right_layer=right_layer)
+    #m.split_map(left_layer=left_layer, right_layer=right_layer)
+    m.split_map(left_layer, right_layer)
 
 
 
@@ -78,7 +83,8 @@ if right_layer.endswith('.tif'):
     m.add_raster(raster_path)
 
 
-m.split_map(left_layer=left_layer, right_layer=right_layer)
+#m.split_map(left_layer=left_layer, right_layer=right_layer)
+m.split_map(left_layer, right_layer)
 
 # Check if the selected layer is ESA WorldCover, then display the legend
 if right_layer in esa_layers:
